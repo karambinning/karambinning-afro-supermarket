@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afro Supermarket — 209 Narborough Road, Leicester</title>
+<meta name="description" content="The Narborough Road shop for African and Caribbean groceries — plantain, palm oil, scotch bonnet, egusi, ewedu, fonio, fresh produce and the things your big supermarket forgot. 209 Narborough Road, Leicester LE3 2QR. Call 0116 282 3016.">
+<meta name="theme-color" content="#13261a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper:        #f3ead4;  /* fonio cream */
+  --paper-2:      #ebe0c4;  /* fonio cream, deeper */
+  --ink:          #13261a;  /* palm leaf, deep */
+  --ink-2:        #1f3826;
+  --ember:        #d9531c;  /* palm oil ember */
+  --ember-deep:   #a83a13;
+  --plantain:     #e8b544;  /* overripe plantain skin */
+  --hibiscus:     #7a2a26;  /* dried sorrel */
+  --rule:         #d4c599;
+  --mute:         #6b6147;
+  --max:          1240px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+body {
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: clamp(1rem, .55rem + .9vw, 1.18rem);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* paper grain — tiny noise via radial-gradient stack */
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  opacity: .055;
+  background-image:
+    radial-gradient(circle at 17% 23%, var(--ink) 0 .9px, transparent 1.1px),
+    radial-gradient(circle at 73% 81%, var(--ink) 0 .8px, transparent 1.0px),
+    radial-gradient(circle at 47% 59%, var(--ink) 0 .7px, transparent .9px);
+  background-size: 13px 13px, 19px 19px, 9px 9px;
+  mix-blend-mode: multiply;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", "Times New Roman", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
+  margin: 0;
+}
+p { text-wrap: pretty; hyphens: auto; margin: 0 0 1em; }
+a { color: inherit; }
+
+/* TOP RIBBON */
+.ribbon {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Inter Tight", sans-serif;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .55rem 1.25rem;
+  display: flex; justify-content: space-between; gap: 1rem;
+  flex-wrap: wrap;
+}
+.ribbon b { font-weight: 700; color: var(--plantain); letter-spacing: .14em; }
+
+/* MASTHEAD */
+.mast {
+  padding: clamp(1.2rem, 3vw, 2.3rem) clamp(1.25rem, 4vw, 3rem) 0;
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 1.5rem;
+}
+.wordmark {
+  font-family: "Fraunces", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(1.4rem, 1rem + 1vw, 1.8rem);
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 14, "SOFT" 100;
+}
+.wordmark .amp { color: var(--ember); }
+.mast .phone {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, .8rem + .5vw, 1.3rem);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ember);
+  padding-bottom: 2px;
+}
+.mast .phone:hover { color: var(--ember-deep); }
+
+/* HERO HEADLINE */
+.hero {
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3rem) clamp(1.5rem, 3vw, 3rem);
+  max-width: var(--max); margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: end;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 1.4rem + 7vw, 8rem);
+  line-height: .88;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.hero h1 .em { color: var(--ember); font-style: italic; font-weight: 600; }
+.hero h1 .sm { font-style: italic; font-weight: 400; color: var(--ink-2); }
+.hero h1 .ye { color: var(--plantain); }
+.hero h1 .hb { color: var(--hibiscus); font-style: italic; font-weight: 600; }
+
+.kicker {
+  font-family: "Inter Tight", sans-serif;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--mute);
+  margin-bottom: 1.1rem;
+  display: flex; align-items: center; gap: .55rem;
+}
+.kicker::before {
+  content: ""; display: inline-block;
+  width: 22px; height: 1.5px; background: var(--ember);
+}
+
+.heroSide p {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.05rem, .75rem + .7vw, 1.35rem);
+  line-height: 1.42;
+  color: var(--ink-2);
+  font-variation-settings: "opsz" 18, "SOFT" 100;
+}
+.heroSide .nb {
+  font-family: "Inter Tight", sans-serif;
+  font-style: normal;
+  font-size: .82rem;
+  letter-spacing: .04em;
+  margin-top: 1.3rem;
+  color: var(--mute);
+}
+
+/* MARQUEE */
+.marquee {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 1.05rem 0;
+  overflow: hidden;
+  background: var(--paper-2);
+  position: relative;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 2.4rem;
+  white-space: nowrap;
+  animation: scroll 42s linear infinite;
+  will-change: transform;
+}
+.marquee span {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(1.1rem, .7rem + 1.3vw, 1.9rem);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 72, "SOFT" 80;
+}
+.marquee span::after {
+  content: "✺";
+  display: inline-block;
+  margin-left: 2.4rem;
+  color: var(--ember);
+  font-style: normal;
+  font-size: .85em;
+  transform: translateY(-.15em);
+}
+@keyframes scroll { to { transform: translateX(-50%); } }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+/* STOCK / SECTION */
+section.stock {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+}
+.stock h2 {
+  font-size: clamp(2rem, 1rem + 4.5vw, 4.5rem);
+  line-height: .95;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  margin-bottom: clamp(1.8rem, 3vw, 2.6rem);
+  max-width: 18ch;
+}
+.stock h2 em { color: var(--ember); font-style: italic; font-weight: 600; }
+
+.stockGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.8rem) clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(1.8rem, 3vw, 2.6rem);
+}
+.lot { position: relative; }
+.lot h3 {
+  font-size: clamp(1.4rem, .9rem + 1.2vw, 1.95rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin-bottom: .55rem;
+  font-variation-settings: "opsz" 36, "SOFT" 100;
+}
+.lot h3 .no {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 500;
+  font-size: .65em;
+  letter-spacing: .06em;
+  color: var(--ember);
+  margin-right: .45em;
+  vertical-align: .25em;
+}
+.lot p {
+  font-size: .98rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+.lot ul {
+  font-family: "Inter Tight", sans-serif;
+  font-size: .92rem;
+  line-height: 1.5;
+  list-style: none;
+  padding: 0; margin: .65rem 0 0;
+  color: var(--mute);
+  columns: 2;
+  column-gap: 1.5rem;
+}
+.lot ul li { padding: .1rem 0; }
+.lot ul li::before { content: "—  "; color: var(--ember); }
+
+/* BIG NOTE — single editorial paragraph */
+.bignote {
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+}
+.bignote::before {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle at 30% 40%, var(--paper) 0 .9px, transparent 1.1px),
+    radial-gradient(circle at 70% 70%, var(--paper) 0 .7px, transparent 1.0px);
+  background-size: 17px 17px, 11px 11px;
+  opacity: .04;
+}
+.bignote .wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  position: relative;
+}
+.bignote .kicker { color: var(--plantain); }
+.bignote .kicker::before { background: var(--plantain); }
+.bignote h2 {
+  font-size: clamp(1.7rem, 1rem + 2.3vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--plantain);
+  font-variation-settings: "opsz" 72, "SOFT" 100;
+}
+.bignote p {
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  font-size: clamp(1.05rem, .75rem + .65vw, 1.35rem);
+  line-height: 1.55;
+  margin: 0 0 1.2em;
+  font-variation-settings: "opsz" 18, "SOFT" 100;
+}
+.bignote p:last-child { margin-bottom: 0; }
+.bignote .em { color: var(--plantain); font-style: italic; }
+
+/* FIND US — letterhead */
+.find {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.find h2 {
+  font-size: clamp(2.4rem, 1.4rem + 5.5vw, 6.5rem);
+  line-height: .9;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.find h2 .it { font-style: italic; color: var(--ember); font-weight: 600; }
+
+.letterhead {
+  font-family: "Inter Tight", sans-serif;
+  font-size: clamp(1.05rem, .8rem + .4vw, 1.2rem);
+  line-height: 1.55;
+}
+.letterhead .row {
+  display: flex; gap: .8rem; padding: .9rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.letterhead .row:last-child { border-bottom: 0; }
+.letterhead .lbl {
+  font-family: "Inter Tight", sans-serif;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--mute);
+  width: 5.5rem;
+  flex-shrink: 0;
+}
+.letterhead .val { font-weight: 600; letter-spacing: -0.01em; }
+.letterhead .val a {
+  text-decoration: none;
+  border-bottom: 2px solid var(--ember);
+  padding-bottom: 1px;
+}
+.letterhead .val a:hover { color: var(--ember-deep); }
+.letterhead .val.big {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 60, "SOFT" 80;
+}
+.letterhead .note {
+  font-size: .85rem;
+  color: var(--mute);
+  margin-top: .3rem;
+  font-style: italic;
+}
+
+.findSide p {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, .75rem + .65vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--ink-2);
+  font-variation-settings: "opsz" 18, "SOFT" 100;
+}
+.findSide .sig {
+  margin-top: 1.6rem;
+  font-family: "Inter Tight", sans-serif;
+  font-style: normal;
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(2.2rem, 4vw, 3.5rem) clamp(1.25rem, 4vw, 3rem) 1.5rem;
+  position: relative;
+}
+footer .fwrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+}
+footer .biggie {
+  font-family: "Fraunces", serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(2.5rem, 1.5rem + 5vw, 6rem);
+  line-height: .9;
+  letter-spacing: -0.04em;
+  color: var(--plantain);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+footer .biggie .amp { color: var(--ember); font-style: italic; }
+footer .meta {
+  font-family: "Inter Tight", sans-serif;
+  font-size: .82rem;
+  line-height: 1.65;
+  letter-spacing: .03em;
+  color: rgba(243, 234, 212, .68);
+}
+footer .meta a { color: var(--plantain); text-decoration: none; border-bottom: 1px solid var(--plantain); }
+footer .colophon {
+  margin-top: 2rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(243, 234, 212, .15);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  font-family: "Inter Tight", sans-serif;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: rgba(243, 234, 212, .42);
+}
+
+/* scroll-driven reveal */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(1.8rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* mobile */
+@media (max-width: 760px) {
+  .mast { grid-template-columns: 1fr; align-items: start; gap: .6rem; padding-top: 1.4rem; }
+  .mast .phone { justify-self: start; }
+  .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
+  .heroSide { padding-top: .5rem; }
+  .lot ul { columns: 1; }
+  .bignote .wrap { grid-template-columns: 1fr; gap: 1.2rem; }
+  .find { grid-template-columns: 1fr; gap: 1.8rem; }
+  footer .fwrap { grid-template-columns: 1fr; align-items: start; }
+  .letterhead .lbl { width: 5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+  .reveal { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <span>209 Narborough Road · Leicester LE3 2QR</span>
+  <span><b>Open today</b> — call <a href="tel:+441162823016" style="color:inherit;text-decoration:underline;text-underline-offset:3px">0116 282 3016</a></span>
+</div>
+
+<header class="mast">
+  <div class="wordmark">Afro <span class="amp">·</span> Supermarket</div>
+  <a href="tel:+441162823016" class="phone">0116 282 3016</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Specialist African &amp; Caribbean grocer · since the road remembers</div>
+    <h1>
+      Plantain.<br>
+      <span class="ye">Palm oil.</span><br>
+      <span class="hb">Scotch bonnet.</span><br>
+      <span class="em">Ewedu.</span><br>
+      <span class="sm">All the things the big shop forgot.</span>
+    </h1>
+  </div>
+  <div class="heroSide reveal">
+    <p>A neighbourhood shop on Narborough Road for the cook who knows what <em>egusi</em> is meant to feel like in the pestle, what colour the palm oil should be, and which leaf is fresh enough to wrap the moin moin.</p>
+    <div class="nb">Walk-ins welcome · Western Union in-store · Phone orders taken</div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Plantain</span><span>Palm oil</span><span>Scotch bonnet</span><span>Egusi</span><span>Ogbono</span><span>Ewedu</span><span>Fonio</span><span>Cassava flour</span><span>Yam</span><span>Garri</span><span>Fresh oha</span><span>Fresh tete</span><span>Stockfish</span><span>Pepper soup spice</span><span>Smoked turkey</span>
+    <span>Plantain</span><span>Palm oil</span><span>Scotch bonnet</span><span>Egusi</span><span>Ogbono</span><span>Ewedu</span><span>Fonio</span><span>Cassava flour</span><span>Yam</span><span>Garri</span><span>Fresh oha</span><span>Fresh tete</span><span>Stockfish</span><span>Pepper soup spice</span><span>Smoked turkey</span>
+  </div>
+</div>
+
+<section class="stock">
+  <div class="kicker">What's on the shelf</div>
+  <h2>The shop you came in for, <em>edited by people who actually cook.</em></h2>
+
+  <div class="stockGrid">
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 01</span>Fresh produce</h3>
+      <p>The leaves and tubers that the supermarket won't carry. Brought in by the case, sold by the bunch.</p>
+      <ul>
+        <li>Plantain — ripe &amp; green</li>
+        <li>Cassava &amp; yam</li>
+        <li>Scotch bonnet</li>
+        <li>Fresh ewedu, oha, tete</li>
+        <li>Okra, ugwu</li>
+        <li>Sweet potato</li>
+      </ul>
+    </div>
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 02</span>Pantry &amp; staples</h3>
+      <p>Cupboard ingredients sourced from the right places, sold at honest prices.</p>
+      <ul>
+        <li>Palm oil</li>
+        <li>Garri (white &amp; yellow)</li>
+        <li>Fonio &amp; sorghum</li>
+        <li>Egusi &amp; ogbono</li>
+        <li>Pepper soup spice</li>
+        <li>Stockfish, dried shrimp</li>
+      </ul>
+    </div>
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 03</span>Frozen aisle</h3>
+      <p>The freezer takes care of the things that need to be there: smoked, seasoned, ready for Sunday.</p>
+      <ul>
+        <li>Frozen chicken</li>
+        <li>Smoked turkey</li>
+        <li>Goat &amp; beef cuts</li>
+        <li>Whole fish</li>
+        <li>Plantain leaves</li>
+        <li>Snail, when in</li>
+      </ul>
+    </div>
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 04</span>Household &amp; everyday</h3>
+      <p>General groceries too — the things you forgot on the way home from work.</p>
+      <ul>
+        <li>Soap &amp; toiletries</li>
+        <li>Hair &amp; skin care</li>
+        <li>Tinned goods</li>
+        <li>Soft drinks</li>
+        <li>Bread &amp; milk</li>
+        <li>Cleaning supplies</li>
+      </ul>
+    </div>
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 05</span>Money transfer</h3>
+      <p>Western Union counter inside the shop. Send home while you're picking up dinner.</p>
+      <ul>
+        <li>Western Union</li>
+        <li>Mobile top-ups</li>
+        <li>International calling cards</li>
+      </ul>
+    </div>
+
+    <div class="lot reveal">
+      <h3><span class="no">№ 06</span>Can't see it?</h3>
+      <p>If we don't have it on the shelf and you know we can get it, ask. We bring in by request — palm wine kits, special-occasion ingredients, restaurant orders.</p>
+      <ul>
+        <li>Phone the shop</li>
+        <li>Walk in &amp; ask</li>
+        <li>Bulk &amp; trade orders</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="bignote">
+  <div class="wrap">
+    <div>
+      <div class="kicker">A note from the shop</div>
+      <h2>Why this shop is here.</h2>
+    </div>
+    <div class="reveal">
+      <p>Walk into a supermarket on Narborough Road and you'll find rice, you'll find oil, you'll find chicken. You won't find <span class="em">ewedu fresh enough to wrap your fingers in</span>, palm oil that's the right red, or someone behind the counter who knows what you're cooking on Sunday.</p>
+      <p>This is the shop for those things — for the people who grew up cooking, who came here from Lagos or Kingston or Accra, and who don't want to apologise for the ingredients they buy.</p>
+      <p>If we have it, it's on the shelf. If we don't, ring and ask — we'll bring it in by Friday.</p>
+    </div>
+  </div>
+</section>
+
+<section class="find">
+  <div>
+    <div class="kicker">Where to find us</div>
+    <h2>Two doors down from <span class="it">where you thought.</span></h2>
+    <div class="letterhead">
+      <div class="row"><div class="lbl">Shop</div><div class="val big">Afro Supermarket</div></div>
+      <div class="row"><div class="lbl">Address</div><div class="val">209 Narborough Road<br>Leicester LE3 2QR</div></div>
+      <div class="row"><div class="lbl">Phone</div><div class="val big"><a href="tel:+441162823016">0116 282 3016</a></div></div>
+      <div class="row"><div class="lbl">In-store</div><div class="val">Western Union money transfer<br><span class="note">Send international from the same counter.</span></div></div>
+    </div>
+  </div>
+  <div class="findSide reveal">
+    <p>We're on the busy stretch of Narborough Road — between the chemist and the florist, with the pharmacy further down toward the Co-op. The shop is open seven days; ring before you make the trip if you're after something specific.</p>
+    <div class="sig">— The shop floor, 209 Narborough Road</div>
+  </div>
+</section>
+
+<footer>
+  <div class="fwrap">
+    <div class="biggie">
+      Drop in.<br>
+      Or ring <span class="amp">→</span><br>
+      <a href="tel:+441162823016" style="color:inherit;text-decoration:none;border-bottom:3px solid var(--ember)">0116 282 3016</a>
+    </div>
+    <div class="meta">
+      AFRO SUPERMARKET<br>
+      209 Narborough Road<br>
+      Leicester LE3 2QR<br>
+      <a href="tel:+441162823016">0116 282 3016</a><br><br>
+      Specialist African &amp; Caribbean grocer.<br>
+      General groceries · Western Union · phone orders.
+    </div>
+  </div>
+  <div class="colophon">
+    <span>© 2026 Afro Supermarket, Leicester</span>
+    <span>Independent · family-run · serving the road</span>
+  </div>
+</footer>
+
+</body>
+</html>
